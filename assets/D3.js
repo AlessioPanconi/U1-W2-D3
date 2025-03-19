@@ -110,7 +110,7 @@ const charactersNames = [];
   Dovrai accedere alla proprietà "name" di ogni oggetto in esso contenuto, e inserirla nell'array "charactersNames" creato precedentemente.
   Come risultato dovresti ottenere qualcosa di simile: ["Luke Skywalker", "C-3PO", "R2-D2", etc..]
 */
-for (i = 0; i < starWarsCharacters.length; i++) {
+for (let i = 0; i < starWarsCharacters.length; i++) {
   charactersNames.push(starWarsCharacters[i].name);
 }
 console.log(charactersNames);
@@ -140,7 +140,7 @@ const eyeColor = {
   Utilizza uno switch statement per inserire uno ad uno gli oggetti dei personaggi di "starWarsCharacters" negli array relativi al colore degli occhi precedentemente creati.
   Ogni personaggio dovrà finire nell'array corrispondente al suo colore degli occhi (al valore della sua proprietà "eye_color").
 */
-for (i = 0; i < starWarsCharacters.length; i++) {
+for (let i = 0; i < starWarsCharacters.length; i++) {
   switch (starWarsCharacters[i].eye_color) {
     case "blue":
       eyeColor.blue.push(starWarsCharacters[i]);
@@ -205,7 +205,7 @@ if (crewMass <= 500) {
 /* ESERCIZIO 8
   Usa un for loop per cambiare il valore della proprietà "gender" di alcuni personaggi dal valore "n/a" a "robot" (Tip: puoi effettuare la riassegnazione del valore corrispondente o creare un nuovo array)
 */
-for (i = 0; i < starWarsCharacters.length; i++) {
+for (let i = 0; i < starWarsCharacters.length; i++) {
   if (starWarsCharacters[i].gender === "n/a") {
     starWarsCharacters[i].gender = "robot";
   }
@@ -216,21 +216,25 @@ console.log(starWarsCharacters);
   Utilizzando gli elementi presenti nell'array "femaleCharacters" rimuovi dall'array "charactersNames" le stringhe corrispondenti a personaggi con lo stesso nome.
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
 */
-console.log(starWarsCharacters.length);
-console.log(starWarsCharacters);
-for (i = 0; i < starWarsCharacters.length; i++) {
-  for (i = 0; i < femaleCharacters.length; i++) {
-    if (starWarsCharacters[i].name === femaleCharacters[i].name) {
-      starWarsCharacters[i].splice[i];
+console.log(femaleCharacters);
+console.log(charactersNames);
+
+for (let i = charactersNames.length - 1; i >= 0; i--) {
+  for (let u = 0; u < femaleCharacters.length; u++) {
+    if (charactersNames[i].name === femaleCharacters[u]) {
+      charactersNames.splice(i, 1);
     }
   }
 }
-console.log(starWarsCharacters.length);
-console.log(starWarsCharacters);
+
+console.log(charactersNames.length);
+console.log(charactersNames);
+
 /* --EXTRA-- ESERCIZIO 10
   Crea una funzionalità che selezioni un elemento casuale dall'array "starWarsCharacters" e ne stampi in console le proprietà in modo discorsivo (a tuo piacimento).
 */
-
+/*
+let t;
 do {
   let t = parseInt(prompt("Inserisci un numero compreso tra 0 e " + starWarsCharacters.length + " per decidere l'elemento che vuoi stampare del tuo array"));
 } while (t >= 0 && t <= starWarsCharacters.length);
@@ -239,3 +243,4 @@ function stamp(t, starWarsCharacters) {
   console.log("Verrà stampato l'elemento da te selezionato");
   return starWarsCharacters[t];
 }
+*/
